@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Confirmar Contato</title>
+	<link href="global.css" rel="stylesheet">
+	<link rel="stylesheet" href="/nav.css">
+</head>
+
+<body>
+
+	<nav th:insert="~{fragments/nav :: nav}"></nav>
+
+	<table class="table-striped">
+		<thead>
+			<th>Nome</th>
+			<th>Telefone</th>
+			<th>Bairro</th>
+			<th>Geração</th>
+		</thead>
+		<tbody>
+			<tr class="table-striped" th:each="contact : ${contacts}">
+				<td th:text="${contact.name}">
+
+					<form action="/contacted" method="post" th:object="${contact}">
+						<input type="hidden">
+					</form>
+
+				</td>
+				<td th:text="${contact.phoneNumber}">
+				</td>
+				<td th:text="${contact.neighborhood}">
+				</td>
+				<td th:text="${contact.label}">
+				</td>
+			</tr>
+		</tbody>
+	</table>
+
+</body>
+
+</html>
