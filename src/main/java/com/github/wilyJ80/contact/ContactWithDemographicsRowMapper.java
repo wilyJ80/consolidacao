@@ -14,6 +14,7 @@ public final class ContactWithDemographicsRowMapper implements RowMapper<Contact
 				rs.getString("phone_number"),
 				rs.getString("name"),
 				rs.getString("neighborhood"),
+				rs.getBoolean("contacted"),
 				rs.getInt("demographics_id"),
 				rs.getString("label"));
 	}

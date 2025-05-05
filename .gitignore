@@ -1,0 +1,6 @@
+.env
+.classpath
+.settings
+.bin
+.project
+target

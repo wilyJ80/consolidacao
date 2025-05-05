@@ -35,7 +35,7 @@ public class ContactDaoImpl implements ContactDao {
 	public List<ContactWithDemographics> getAllContacts() {
 		String sql = """
 					SELECT c.id, c.phone_number, c.name,
-						c.neighborhood, c.demographics_id,
+						c.neighborhood, c.contacted, c.demographics_id,
 						d.label
 					FROM contact c
 					LEFT JOIN demographics d
